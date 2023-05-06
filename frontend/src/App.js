@@ -1,10 +1,9 @@
 import './App.scss';
 import Dashboard from './components/Dashboard';
-import {} from "react-router-dom"
-import { Route, Routes } from "react-router-dom"
 import MyGames from './components/MyGames';
 import MyFavourites from './components/MyFavourites';
 import Gameshop from './components/GameShop';
+import { Route, Routes } from "react-router-dom"
 
 
 function App() {
@@ -20,6 +19,6 @@ function App() {
     </div>
     </>
   )
-  }
+}
 
 export default App;
