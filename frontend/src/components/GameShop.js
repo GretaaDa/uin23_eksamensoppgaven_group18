@@ -1,3 +1,5 @@
 export default function GameShop() {
-    return <h1>Game shop</h1>
+    return (
+        <h1>Game shop</h1>
+    )
 }
