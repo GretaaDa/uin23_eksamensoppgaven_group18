@@ -10,25 +10,25 @@ import { fetchGames } from './sanity/gameServices';
 
 
 function App() {
-
-  const [games, setGames] = useState(null)
+  const [games, setGames] = useState([])
 
   const getGames = async () => {
-    const data = fetchGames()
-    console.log(data)
+    const data = await fetchGames()
+    setGames(data)
   }
 
   useEffect(() => {
     getGames()
   }, [])
+
   return (
     <>
       <Nav />
       <div className="container">
         <Routes>
-          <Route path="Dashboard" index element={<Dashboard />} />
+          <Route index element={<Dashboard games={games} />} />
           <Route path="GameShop" element={<Gameshop />} />
-          <Route path="MyGames" element={<MyGames />} />
+          <Route path="MyGames" element={<MyGames games={games} />} />
           <Route path="MyFavourites" element={<MyFavourites />} />
         </Routes>
       </div>
