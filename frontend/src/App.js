@@ -9,38 +9,57 @@ import { useEffect, useState } from 'react';
 import { fetchGames } from './sanity/gameServices';
 
 //7defe92ceef1441682a9b46c202cbc3d
+//https://api.rawg.io/api/games?dates=2019-09-01,2019-09-30&platforms=18,1,7&key=5e35f504c4154714add5b9909f65f051
 function App() {
-  const [games, setGames] = useState([])
-
-  const [recentGames, setRecentGames] = useState([])
+  const [games, setGames] = useState(null)
 
   const getRecentGames = async () => {
-    const result = await fetch(`https://api.rawg.io/api/games?dates=2019-09-01,2019-09-30&platforms=18,1,7&key=5e35f504c4154714add5b9909f65f051`)
-    const data = await result.json()
-    setRecentGames(data)
+    const data = await fetch(
+      `https://api.rawg.io/api/games?key=5e35f504c4154714add5b9909f65f051&platforms=18,1,7`
+    ).then((res) => res.json());
+
+    const games2 = data.results;
+
+    const updatedGames = await Promise.all(
+        games2.map(async (game) => {
+            const data2 = await fetch(
+                `https://api.rawg.io/api/games/${game.slug}/stores?key=5e35f504c4154714add5b9909f65f051`
+            ).then((res) => res.json());
+
+            const stores = data2.results;
+            const storeUrl = stores.find((store) => store.url.includes('steam')).url;
+
+            console.log(stores)
+
+            return {
+                ...game,
+                store_url: storeUrl,
+            };
+        })
+    );
+
+    setGames(updatedGames);
+};
+  const getGames = async () => {
+    const data = fetchGames()
   }
 
   useEffect(() => {
     getRecentGames()
   }, [])
 
-  const getGames = async () => {
-    const data = await fetchGames()
-    setGames(data)
-  }
-
   useEffect(() => {
     getGames()
   }, [])
-
+  
   return (
     <>
       <Nav />
       <div className="container">
         <Routes>
-          <Route index element={<Dashboard games={games} />} />
-          <Route path="GameShop" element={<Gameshop />} />
-          <Route path="MyGames" element={<MyGames games={games} />} />
+          <Route index element={<Dashboard games={games}/>} />
+          <Route path="GameShop" element={<Gameshop games={games}/>} />
+          <Route path="MyGames" element={<MyGames />} />
           <Route path="MyFavourites" element={<MyFavourites />} />
         </Routes>
       </div>
