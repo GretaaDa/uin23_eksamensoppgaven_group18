@@ -39,7 +39,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route index element={<Dashboard games={games} recentGames={recentGames} />} />
-          <Route path="GameShop" element={<Gameshop />} />
+          <Route path="GameShop" element={<Gameshop recentGames={recentGames}/>} />
           <Route path="MyGames" element={<MyGames games={games} />} />
           <Route path="MyFavourites" element={<MyFavourites />} />
         </Routes>
