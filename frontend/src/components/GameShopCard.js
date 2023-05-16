@@ -1,5 +1,6 @@
-export default function GameShopCard({ recent }) {
-    console.log(recent?.genres.map((genres, i) => genres.name))
+import { useEffect, useState } from 'react';
+
+export default function GameShopCard({recent}) {
     return (<>
         <div className="gameshopCard">
             <img className="thumbnail" src={recent.background_image} alt = {recent.name}/>
@@ -11,3 +12,6 @@ export default function GameShopCard({ recent }) {
 }
 
 //{recent?.genres?.map((recent, i) => <GameShopCard key={i} recent={recent}/>)}
+//<button>Buy{recent.stores.map}</button>
+
+//https://api.rawg.io/api/platforms

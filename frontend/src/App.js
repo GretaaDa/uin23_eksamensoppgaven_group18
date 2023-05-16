@@ -37,7 +37,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route index element={<Dashboard recentGames={recentGames}/>} />
-          <Route path="GameShop" element={<Gameshop/>} />
+          <Route path="GameShop" element={<Gameshop recentGames={recentGames}/>} />
           <Route path="MyGames" element={<MyGames />} />
           <Route path="MyFavourites" element={<MyFavourites />} />
         </Routes>
