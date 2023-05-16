@@ -22,12 +22,14 @@ function App() {
 
     const updatedGames = await Promise.all(
         games2.map(async (game) => {
-            const data = await fetch(
+            const data2 = await fetch(
                 `https://api.rawg.io/api/games/${game.slug}/stores?key=5e35f504c4154714add5b9909f65f051`
             ).then((res) => res.json());
 
-            const stores = data.results;
+            const stores = data2.results;
             const storeUrl = stores.find((store) => store.url.includes('steam')).url;
+
+            console.log(stores)
 
             return {
                 ...game,
@@ -42,8 +44,6 @@ function App() {
     const data = fetchGames()
   }
 
-console.log(setGames)
-
   useEffect(() => {
     getRecentGames()
   }, [])
@@ -51,6 +51,7 @@ console.log(setGames)
   useEffect(() => {
     getGames()
   }, [])
+  
   return (
     <>
       <Nav />
