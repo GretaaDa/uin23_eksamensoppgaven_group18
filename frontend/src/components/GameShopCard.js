@@ -1,11 +1,12 @@
-export default function GameShopCard({recent}) {
-    return(<>
+export default function GameShopCard({ recent }) {
+    console.log(recent)
+    return (<>
         <div className="gameshopCard">
-        <img src={recent.background_image}/>
-        <h3>{recent.name}</h3>
-        <button>Buy</button>
+            <img />
+            <h3></h3>
+            <button>Buy</button>
         </div>
-        </>)
+    </>)
 }
 
 //{recent?.genres?.map((recent, i) => <GameShopCard key={i} recent={recent}/>)}
