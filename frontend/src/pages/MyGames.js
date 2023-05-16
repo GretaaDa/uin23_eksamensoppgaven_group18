@@ -1,5 +1,11 @@
-export default function MyGames() {
+import GameCard from "../components/GameCard";
+
+export default function MyGames({ games }) {
     return (
-        <h1>My Games</h1>
+        <>
+            <h1>My Games Library</h1>
+            {games?.map((game, i) => <GameCard key={i} game={game} />)}
+
+        </>
     )
 }

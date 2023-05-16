@@ -65,9 +65,11 @@ h2 {
 
 .gameshopCard {
   align-items: center;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 1rem 1rem;
   max-width: 70%;
 
-}
+  .myGames-card {
+    background-color: #e8e6e6;
+  }
