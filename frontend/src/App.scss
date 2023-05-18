@@ -5,15 +5,34 @@
 
 body {
   margin: 0;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .container {
   margin-top: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50px 0.2fr 50px 0.4fr 0.4fr;
 }
 
-.nav {
+header {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  display: flex;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+nav {
   background-color: #333;
   color: white;
   display: flex;
@@ -21,35 +40,31 @@ body {
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
-}
 
-.title {
-  font-size: 2rem;
-}
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
 
-.nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: .25rem;
+    }
 
-.nav a {
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: .25rem;
-}
+    li.active {
+      background-color: #555;
+    }
 
-.nav li.active {
-  background-color: #555;
-}
-
-.nav li:hover {
-  background-color: #777;
+    li:hover {
+      background-color: #777;
+    }
 }
 
 h2 {
@@ -57,14 +72,6 @@ h2 {
   margin: 0;
   display: inline-block;
   text-transform: uppercase;
-}
-
-.thumbnail {
-  width: 250px;
-  height: 250px;
-  padding: 1rem;
-  align-items: center;
-  float: left;
 }
 
 .visit {
@@ -76,45 +83,79 @@ h2 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #555;
+  }
+}
+
+.thumbnail {
+  width: 250px;
+  height: 250px;
+  padding: 1rem;
+  align-items: center;
+  float: left;
 }
 
 .newest {
+  grid-column: 1/4;
+  grid-row: 2/2;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
-  background-color: #dfdfdf;
+  background-color: #eeeeee;
+  border-radius: 20px;
   padding-top: 1rem;
   margin-bottom: 2rem;
+  min-width: 70%;
 
 }
+
+.library {
+  grid-column: 1/1;
+  grid-row: 3/4;
+}
+
+.myFav {
+  grid-column: 3/3;
+  grid-row: 3/4;
+  margin-left: 1rem;
+}
+
 
 .gameshopCard {
   min-width: 500px;
   max-width: 500px;
   max-height: 90%;
-  background-color: rgb(177, 177, 177);
+  border-radius: 20px;
+  border: 5px solid #333;
+  background-color: white;
   margin: 1rem;
   position: relative;
-}
-
-.myGames-card {
-  background-color: #e8e6e6;
-  width: 100%;
-  max-width: 30rem;
-
-  img {
-    width: 100%;
-    max-width: 30rem;
+  
+  &:hover{
+    transform: scale(103%);
+    transition: 0.4s;
+  
   }
+  
+  p {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 2rem;
+    justify-content: center;
+    margin-left: 30%;
+  }
+
+  .gameName {
+    font-size: 20px;
+    padding-left: 5rem;
+    margin-right: 1rem;
+}
 }
 
-
-.buyBtn {
-  font-size: 15px;
-}
-
-.gameshopCard button {
+button {
   background-color: #333;
   height: 2rem;
   color: white;
@@ -122,26 +163,163 @@ h2 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  align-items: center;
-  margin: 1rem;
-  position: absolute;
-  bottom: 0;
-  left: 57%;
+  display: flex;
   font-weight: bold;
+  font-size: 15px;
+  position: relative;
+  bottom: 0;
+  
+  &:hover {
+    background-color: #555;
+  }
 }
 
-.gameshopCard button:hover {
-  background-color: #555;
+.dash-myGame {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  min-width: 70%;
+
+  
+  .myGame-card {
+    min-width: 500px;
+    min-height: 260px;
+    max-width: 500px;
+    max-height: 100%;
+    border-radius: 20px;
+    border: 5px solid #333;
+    background-color: white;
+    margin: 1rem;
+    position: relative;
+
+  img {
+    width: 250px;
+    height: 250px;
+    padding: 1rem;
+    align-items: center;
+    float: left;
+  }
+
+  &:hover{
+    transform: scale(103%);
+    transition: 0.4s;
+  }
+  
+  h3 {
+    font-size: 20px;
+    padding-left: 5rem;
+    margin-right: 1rem;
+  }
+  
+  p {
+    margin-top: 5%;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1rem;
+  }
+
+}
 }
 
-.gameshopCard p {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 2rem;
+.fav {
+  grid-column: 3/3;
+  grid-row: 4/5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+  min-width: 70%;
+  margin-left: 1rem;
+
+  .gameshopCard{
+    min-width: 500px;
+    min-height: 260px;
+    max-width: 500px;
+    max-height: 100%;
+    border-radius: 20px;
+    border: 5px solid #333;
+    background-color: white;
+    margin: 1rem;
+    position: relative;
+  }
 }
 
-.gameName {
-  font-size: 20px;
-  padding-left: 5rem;
-  margin-right: 1rem;
+
+.newestShop {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1/4;
+  grid-row: 2/4;
+  
+  .gameshopCard{
+    min-width: 250px;
+    width: 40%;
+    min-height: 260px;
+    max-width: 550px;
+    max-height: 100%;
+    border-radius: 20px;
+    border: 5px solid #333;
+    background-color: white;
+    margin: 1rem;
+    position: relative;
+  }
+  
 }
+
+  .my-games{
+    grid-column: 1/4;
+    grid-row: 2/6;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+    .myGame-card{
+      min-width: 500px;
+      width: 50%;
+      min-height: 270px;
+      max-width: 550px;
+      max-height: 100%;
+      border-radius: 20px;
+      border: 5px solid #333;
+      background-color: white;
+      margin: 1rem;
+      position: relative;
+  
+    img {
+      width: 250px;
+      height: 250px;
+      padding: 1rem;
+      align-items: center;
+      float: left;
+    }
+  
+    &:hover{
+      transform: scale(103%);
+      transition: 0.4s;
+    }
+    
+    h3 {
+      font-size: 20px;
+      padding-left: 5rem;
+      margin-right: 1rem;
+    }
+    
+    p {
+      margin-top: 5%;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 0.5rem;
+    }
+  }
+  

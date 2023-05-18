@@ -19,6 +19,7 @@ export default function GameCard({ game }) {
 
     return (
         <>
+        <div className="sanityCard">
             <Link to={`/${game.slug.current}`}>
                 <article className="myGame-card" >
                     <img src={gameInfo.background_image} />
@@ -27,6 +28,7 @@ export default function GameCard({ game }) {
                     <p>Hours played: {game.played_time}</p>
                 </article>
             </Link>
+        </div>
         </>
     )
 }
