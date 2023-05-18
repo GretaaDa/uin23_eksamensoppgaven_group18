@@ -1,5 +1,8 @@
+import React from 'react';
+
 export default function MyFavourites() {
-    return (
-        <h1>Favourites</h1>
-    )
+
+  return (
+      <h2>Favourites</h2>
+  );
 }

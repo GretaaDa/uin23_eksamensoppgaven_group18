@@ -8,8 +8,6 @@ import Dashboard from './pages/Dashboard';
 import { useEffect, useState } from 'react';
 import { fetchGames } from './sanity/gameServices';
 
-//7defe92ceef1441682a9b46c202cbc3d
-//https://api.rawg.io/api/games?dates=2019-09-01,2019-09-30&platforms=18,1,7&key=5e35f504c4154714add5b9909f65f051
 function App() {
   const [games, setGames] = useState([])
   const [recentGames, setRecentGames] = useState([])
