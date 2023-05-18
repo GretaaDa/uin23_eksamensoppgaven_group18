@@ -122,6 +122,11 @@ h2 {
   font-weight:bold;
 }
 
+.gameshopCard:hover{
+  transform: scale(103%);
+  transition: 0.4s;
+}
+
 .gameshopCard button:hover {
   background-color: #555;
 }
