@@ -17,9 +17,11 @@ export default function GameCard({ game }) {
         getGameInfo()
     }, [])
 
+    console.log(game)
+
     return (
         <>
-            <Link to={`/${game.slug.current}`}>
+            <Link to={`/${game?.slug?.current}`}>
                 <article className="myGame-card" >
                     <img src={gameInfo.background_image} />
                     <h3>{game.title}</h3>
