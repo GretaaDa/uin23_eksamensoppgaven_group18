@@ -38,6 +38,11 @@ export default {
             name: 'genre',
             type: 'array',
             of: [{ type: 'genres' }]
+        },
+        {
+            title: 'Liked',
+            name: 'liked',
+            type: 'boolean'
         }
     ]
 }

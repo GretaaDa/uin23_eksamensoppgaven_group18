@@ -41,31 +41,37 @@ nav {
   gap: 2rem;
   padding: 0 1rem;
 
-    ul {
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
+  img {
+    width: 100%;
+    max-width: 13rem;
+  }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding: .25rem;
-    }
+  ul {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
 
-    li.active {
-      background-color: #555;
+    li {
+      padding: 1rem;
     }
+  }
 
-    li:hover {
-      background-color: #777;
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  li:hover {
+    background-color: #777;
+    padding: 1rem;
+  }
 }
+
+
 
 h2 {
   color: rgb(0, 0, 0);
@@ -133,26 +139,17 @@ h2 {
   background-color: white;
   margin: 1rem;
   position: relative;
-  
-  &:hover{
-    transform: scale(103%);
-    transition: 0.4s;
-  
-  }
-  
-  p {
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 2rem;
-    justify-content: center;
-    margin-left: 30%;
-  }
-
-  .gameName {
-    font-size: 20px;
-    padding-left: 5rem;
-    margin-right: 1rem;
 }
+
+.myGame-card {
+  background-color: #e8e6e6;
+  width: 100%;
+  max-width: 30rem;
+}
+
+img {
+  width: 100%;
+  max-width: 30rem;
 }
 
 button {
@@ -174,58 +171,13 @@ button {
   }
 }
 
-.dash-myGame {
-  grid-column: 1/3;
-  grid-row: 4/5;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  text-align: center;
-  background-color: #eeeeee;
-  border-radius: 20px;
-  padding-top: 1rem;
-  margin-bottom: 2rem;
-  min-width: 70%;
-
-  
-  .myGame-card {
-    min-width: 500px;
-    min-height: 260px;
-    max-width: 500px;
-    max-height: 100%;
-    border-radius: 20px;
-    border: 5px solid #333;
-    background-color: white;
-    margin: 1rem;
-    position: relative;
-
-  img {
-    width: 250px;
-    height: 250px;
-    padding: 1rem;
-    align-items: center;
-    float: left;
-  }
-
-  &:hover{
-    transform: scale(103%);
-    transition: 0.4s;
-  }
-  
-  h3 {
-    font-size: 20px;
-    padding-left: 5rem;
-    margin-right: 1rem;
-  }
-  
-  p {
-    margin-top: 5%;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1rem;
-  }
-
+.gameshopCard:hover {
+  transform: scale(103%);
+  transition: 0.4s;
 }
+
+.gameshopCard button:hover {
+  background-color: #555;
 }
 
 .fav {
@@ -255,71 +207,18 @@ button {
   }
 }
 
-
-.newestShop {
-  display: flex;
-  flex-wrap: wrap;
-  grid-column: 1/4;
-  grid-row: 2/4;
-  
-  .gameshopCard{
-    min-width: 250px;
-    width: 40%;
-    min-height: 260px;
-    max-width: 550px;
-    max-height: 100%;
-    border-radius: 20px;
-    border: 5px solid #333;
-    background-color: white;
-    margin: 1rem;
-    position: relative;
-  }
-  
+.gameName {
+  font-size: 20px;
+  padding-left: 5rem;
+  margin-right: 1rem;
 }
 
-  .my-games{
-    grid-column: 1/4;
-    grid-row: 2/6;
-    display: flex;
-    flex-wrap: wrap;
-  }
+.game-page {
+  display: flex;
+  flex-wrap: wrap;
 
-    .myGame-card{
-      min-width: 500px;
-      width: 50%;
-      min-height: 270px;
-      max-width: 550px;
-      max-height: 100%;
-      border-radius: 20px;
-      border: 5px solid #333;
-      background-color: white;
-      margin: 1rem;
-      position: relative;
-  
-    img {
-      width: 250px;
-      height: 250px;
-      padding: 1rem;
-      align-items: center;
-      float: left;
-    }
-  
-    &:hover{
-      transform: scale(103%);
-      transition: 0.4s;
-    }
-    
-    h3 {
-      font-size: 20px;
-      padding-left: 5rem;
-      margin-right: 1rem;
-    }
-    
-    p {
-      margin-top: 5%;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 0.5rem;
-    }
+  img {
+    height: 100%;
+    max-height: 30rem;
   }
-  
+}

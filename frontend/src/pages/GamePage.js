@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { fetchSpecificGame } from "../sanity/gameServices"
 
-export default function GamePage() {
+export default function GamePage({ onFavourite }) {
     //Used useParams hook to retreive the slug parameter the matching rout
     const { slug } = useParams()
 
@@ -12,6 +12,8 @@ export default function GamePage() {
     const [extraInfo, setExtraInfo] = useState()
     //Initialized the state values for the game store information
     const [storeInfo, setStoreInfo] = useState()
+
+
 
     //Got the necessary data from sanity that corresponds to the slug
     const getSpecGame = async (slug) => {
@@ -62,12 +64,12 @@ export default function GamePage() {
 
     return (
         <>
-            <article>
+            <article className="game-page">
                 <img src={extraInfo?.background_image} />
                 <div className="heading">
                     <h1>{specGame?.title}</h1>
                     <p>{extraInfo?.rating}</p>
-                    <p>#</p>
+                    <button onClick={() => onFavourite(specGame)} >Favourite</button>
                 </div>
                 <p>{extraInfo?.description_raw}</p>
                 <div className="publish-details">
