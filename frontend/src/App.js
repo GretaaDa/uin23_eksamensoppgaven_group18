@@ -7,9 +7,11 @@ import { Route, Routes } from "react-router-dom"
 import Dashboard from './pages/Dashboard';
 import { useEffect, useState } from 'react';
 import { fetchGames } from './sanity/gameServices';
+import GamePage from './pages/GamePage';
 
 //7defe92ceef1441682a9b46c202cbc3d
 function App() {
+  //Initialized the state values for the sanity game information
   const [games, setGames] = useState([])
 
   const [recentGames, setRecentGames] = useState([])
@@ -24,11 +26,13 @@ function App() {
     getRecentGames()
   }, [])
 
+  //Got the game information from sanity
   const getGames = async () => {
     const data = await fetchGames()
     setGames(data)
   }
 
+  //Ran the function on the first render
   useEffect(() => {
     getGames()
   }, [])
@@ -42,6 +46,7 @@ function App() {
           <Route path="GameShop" element={<Gameshop />} />
           <Route path="MyGames" element={<MyGames games={games} />} />
           <Route path="MyFavourites" element={<MyFavourites />} />
+          <Route path=":slug" element={<GamePage />} />
         </Routes>
       </div>
     </>

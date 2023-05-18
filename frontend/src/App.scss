@@ -59,4 +59,11 @@ h2 {
 
 .myGames-card {
   background-color: #e8e6e6;
+  width: 100%;
+  max-width: 30rem;
+
+  img {
+    width: 100%;
+    max-width: 30rem;
+  }
 }
