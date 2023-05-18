@@ -1,5 +1,6 @@
 import GameShopCard from "../components/GameShopCard"
 import GameCard from "../components/GameCard";
+import { Link } from "react-router-dom";
 
 export default function Dashboard({ recentGames, games, favourites }) {
     recentGames = recentGames?.results?.slice(0, 3)
