@@ -62,7 +62,7 @@ export default function GamePage() {
 
     return (
         <>
-            <article>
+            <article className="game-page">
                 <img src={extraInfo?.background_image} />
                 <div className="heading">
                     <h1>{specGame?.title}</h1>
