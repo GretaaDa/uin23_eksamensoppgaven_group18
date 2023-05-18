@@ -8,8 +8,9 @@ body {
 }
 
 .container {
-  margin: 1rem;
-  text-align: center;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .nav {
@@ -52,9 +53,49 @@ body {
 }
 
 h2 {
-  color: red;
+  color: rgb(0, 0, 0);
+  margin: 0;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.thumbnail {
+  width: 250px;
+  height: 250px;
+  padding: 1rem;
+  align-items: center;
+  float: left;
+}
+
+.visit {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem 3rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newest {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #dfdfdf;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+
+}
+
+.gameshopCard {
+  min-width: 500px;
+  max-width: 500px;
+  max-height: 90%;
+  background-color: rgb(177, 177, 177);
   margin: 1rem;
+  position: relative;
 }
 
 .myGames-card {
@@ -66,4 +107,41 @@ h2 {
     width: 100%;
     max-width: 30rem;
   }
+}
+
+
+.buyBtn {
+  font-size: 15px;
+}
+
+.gameshopCard button {
+  background-color: #333;
+  height: 2rem;
+  color: white;
+  padding: 0.5rem 4rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-items: center;
+  margin: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 57%;
+  font-weight: bold;
+}
+
+.gameshopCard button:hover {
+  background-color: #555;
+}
+
+.gameshopCard p {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 2rem;
+}
+
+.gameName {
+  font-size: 20px;
+  padding-left: 5rem;
+  margin-right: 1rem;
 }

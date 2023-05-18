@@ -9,15 +9,13 @@ import { useEffect, useState } from 'react';
 import { fetchGames } from './sanity/gameServices';
 import GamePage from './pages/GamePage';
 
-//7defe92ceef1441682a9b46c202cbc3d
 function App() {
   //Initialized the state values for the sanity game information
   const [games, setGames] = useState([])
-
   const [recentGames, setRecentGames] = useState([])
 
   const getRecentGames = async () => {
-    const result = await fetch(`https://api.rawg.io/api/games?dates=2019-09-01,2019-09-30&platforms=18,1,7&key=5e35f504c4154714add5b9909f65f051`)
+    const result = await fetch(`https://api.rawg.io/api/games?dates=2023-04-01,2023-05-15&platforms=18,1,7&key=5e35f504c4154714add5b9909f65f051`)
     const data = await result.json()
     setRecentGames(data)
   }
@@ -42,8 +40,8 @@ function App() {
       <Nav />
       <div className="container">
         <Routes>
-          <Route index element={<Dashboard games={games} />} />
-          <Route path="GameShop" element={<Gameshop />} />
+          <Route index element={<Dashboard games={games} recentGames={recentGames} />} />
+          <Route path="GameShop" element={<Gameshop recentGames={recentGames}/>} />
           <Route path="MyGames" element={<MyGames games={games} />} />
           <Route path="MyFavourites" element={<MyFavourites />} />
           <Route path=":slug" element={<GamePage />} />
