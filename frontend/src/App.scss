@@ -104,11 +104,11 @@ h2 {
   background-color: #e8e6e6;
   width: 100%;
   max-width: 30rem;
+}
 
-  img {
-    width: 100%;
-    max-width: 30rem;
-  }
+img {
+  width: 100%;
+  max-width: 30rem;
 }
 
 
@@ -130,6 +130,11 @@ h2 {
   bottom: 0;
   left: 57%;
   font-weight: bold;
+}
+
+.gameshopCard:hover {
+  transform: scale(103%);
+  transition: 0.4s;
 }
 
 .gameshopCard button:hover {
