@@ -10,28 +10,20 @@ export default function Dashboard({ recentGames, games, favourites }) {
     favourites = favourites.slice(0, 2)
     return (<>
         <header>
-        <h2>Dashboard</h2>
-        <Link to="/GameShop">
-            <button className="visit">Visit Shop</button>
-        </Link>
+            <h2>Dashboard</h2>
+            <Link to="/GameShop">
+                <button className="visit">Visit Shop</button>
+            </Link>
         </header>
         <div className="newest">
             {recentGames?.map((recent, i) => <GameShopCard key={i} recent={recent} />)}
         </div>
-            <section className="library">
-                <h2>My Games Library</h2>
-            </section>
-        <div className="dash-myGame">
+        <div className="library">
+            <h2>My Games Library</h2>
             {games?.map((game, i) => <GameCard key={i} game={game} />)}
         </div>
-        <section className="myFav">
+        <div className="myFav">
             <h2>My Favourites</h2>
-        </section>
-        <div className="fav">
-        {recentGames?.map((recent, i) => <GameShopCard key={i} recent={recent} />)}
-        </div>
-
-        <div className="dash-myGame">
             {favourites?.map((game, i) => <GameCard key={i} game={game} />)}
         </div>
     </>)
