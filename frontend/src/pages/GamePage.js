@@ -24,7 +24,7 @@ export default function GamePage({ onFavourite }) {
     //Got all of the game information from rawg API, using specGame data to get the ids, when specGame has a value
     const getExtraInfo = async () => {
         if (specGame) {
-            const result = await fetch(`https://api.rawg.io/api/games/${specGame?.api_id}?key=5e35f504c4154714add5b9909f65f051`)
+            const result = await fetch(`https://api.rawg.io/api/games/${specGame?.api_id}?key=72460563b7d041d4b0db0b87df35dd11`)
             const data = await result.json()
             setExtraInfo(data)
         }
@@ -33,7 +33,7 @@ export default function GamePage({ onFavourite }) {
     //Got all of the store information from rawg API, using specGame data to get the ids, when specGame has a value 
     const getStoreInfo = async () => {
         if (specGame) {
-            const result = await fetch(`https://api.rawg.io/api/games/${specGame?.api_id}/stores?key=5e35f504c4154714add5b9909f65f051`)
+            const result = await fetch(`https://api.rawg.io/api/games/${specGame?.api_id}/stores?key=72460563b7d041d4b0db0b87df35dd11`)
             const data = await result.json()
             setStoreInfo(data)
         }

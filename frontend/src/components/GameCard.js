@@ -7,7 +7,7 @@ export default function GameCard({ game }) {
 
     //Got the game information from rawg API, while using the premade sanity ids to fetch the right game info
     const getGameInfo = async () => {
-        const result = await fetch(`https://api.rawg.io/api/games/${game.api_id}?key=5e35f504c4154714add5b9909f65f051`)
+        const result = await fetch(`https://api.rawg.io/api/games/${game.api_id}?key=72460563b7d041d4b0db0b87df35dd11`)
         const data = await result.json()
         setGameInfo(data)
     }
@@ -19,16 +19,16 @@ export default function GameCard({ game }) {
 
     return (
         <>
-        <div className="sanityCard">
-            <Link to={`/${game.slug.current}`}>
-                <article className="myGame-card" >
-                    <img src={gameInfo.background_image} />
-                    <h3>{game.title}</h3>
-                    {game?.genre.map((genre, i) => <p key={i}>{genre.genre_name}</p>)}
-                    <p>Hours played: {game.played_time}</p>
-                </article>
-            </Link>
-        </div>
+            <div className="sanityCard">
+                <Link to={`/${game.slug.current}`}>
+                    <article className="myGame-card" >
+                        <img src={gameInfo.background_image} />
+                        <h3>{game.title}</h3>
+                        {game?.genre.map((genre, i) => <p key={i}>{genre.genre_name}</p>)}
+                        <p>Hours played: {game.played_time}</p>
+                    </article>
+                </Link>
+            </div>
         </>
     )
 }

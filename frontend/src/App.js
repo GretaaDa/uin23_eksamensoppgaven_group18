@@ -28,7 +28,7 @@ function App() {
   }
 
   const getRecentGames = async () => {
-    const result = await fetch(`https://api.rawg.io/api/games?dates=2023-04-01,2023-05-15&platforms=18,1,7&key=5e35f504c4154714add5b9909f65f051`)
+    const result = await fetch(`https://api.rawg.io/api/games?dates=2023-04-01,2023-05-15&platforms=18,1,7&key=72460563b7d041d4b0db0b87df35dd11`)
     const data = await result.json()
     setRecentGames(data)
   }
