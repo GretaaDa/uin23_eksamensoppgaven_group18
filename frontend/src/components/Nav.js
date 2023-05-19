@@ -1,6 +1,7 @@
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 export default function Nav() {
     //Help adding a local image as the logo: https://stackoverflow.com/questions/34582405/react-wont-load-local-images
+    //Help for making a Navbar in react: https://www.youtube.com/watch?v=SLfhMt5OUPI&feature=youtu.be
     return (
         <nav className="nav">
             <Link to="/"><img className="logo" src={require('../files/game-store.png')} /></Link>
