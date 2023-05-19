@@ -1,5 +1,4 @@
 import './App.scss';
-import Nav from './components/Nav';
 import MyGames from './pages/MyGames';
 import MyFavourites from './pages/MyFavourites';
 import Gameshop from './pages/GameShop';
@@ -8,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import { useEffect, useState } from 'react';
 import { fetchCount, fetchGames } from './sanity/gameServices';
 import GamePage from './pages/GamePage';
+import Layout from './pages/Layout';
 
 function App() {
   //Initialized the state values for the sanity game information
@@ -28,7 +28,7 @@ function App() {
   }
 
   const getRecentGames = async () => {
-    const result = await fetch(`https://api.rawg.io/api/games?dates=2023-04-01,2023-05-15&platforms=18,1,7&key=5e35f504c4154714add5b9909f65f051`)
+    const result = await fetch(`https://api.rawg.io/api/games?dates=2023-04-01,2023-05-15&platforms=18,1,7&key=72460563b7d041d4b0db0b87df35dd11`)
     const data = await result.json()
     setRecentGames(data)
   }
@@ -54,13 +54,14 @@ function App() {
 
   return (
     <>
-      <Nav />
       <Routes>
-        <Route index element={<Dashboard games={games} recentGames={recentGames} favourites={favourites} count={count} />} />
-        <Route path="GameShop" element={<Gameshop recentGames={recentGames} />} />
-        <Route path="MyGames" element={<MyGames games={games} count={count} />} />
-        <Route path="MyFavourites" element={<MyFavourites favourites={favourites} />} />
-        <Route path=":slug" element={<GamePage onFavourite={handleFavourites} />} />
+        <Route element={<Layout />}>
+          <Route index element={<Dashboard games={games} recentGames={recentGames} favourites={favourites} count={count} />} />
+          <Route path="GameShop" element={<Gameshop recentGames={recentGames} />} />
+          <Route path="MyGames" element={<MyGames games={games} count={count} />} />
+          <Route path="MyFavourites" element={<MyFavourites favourites={favourites} />} />
+          <Route path=":slug" element={<GamePage onFavourite={handleFavourites} />} />
+        </Route>
       </Routes>
     </>
   )
