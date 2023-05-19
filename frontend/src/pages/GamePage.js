@@ -64,31 +64,47 @@ export default function GamePage({ onFavourite }) {
 
     return (
         <>
-            <img className="pageimg" src={extraInfo?.background_image} />
             <article className="game-page">
-                <div className="heading">
-                    <h1>{specGame?.title}</h1>
-                    <p>{extraInfo?.rating}</p>
-                    <button className='heart' onClick={() => onFavourite(specGame)} >Favourite</button>
+                <img src={extraInfo?.background_image} alt={specGame?.title} className="game-img" />
+                <div className="text-content">
+                    <div className="heading">
+                        <h1>{specGame?.title}</h1>
+                        <p>{extraInfo?.rating}</p>
+                        <button className='heart' onClick={() => onFavourite(specGame)} >Favourite</button>
+                    </div>
+                    <p>{extraInfo?.description_raw}</p>
+                    <div className="publish-details">
+                        <div className="genre">
+                            <h3 >Genre: </h3>
+                            {specGame?.genre.map((genre, i) => <p key={i}>{genre.genre_name}</p>)}
+                        </div>
+                        <div className="date">
+                            <h3 >Published: </h3>
+                            <p>{extraInfo?.released}</p>
+                        </div>
+                        <div className="publish">
+                            <h3>Publisher:</h3>
+                            <p>{extraInfo?.publishers[0].name}</p>
+                        </div>
+                    </div>
+                    <div className="develop-platforms">
+                        <div className="develop">
+                            <h3>Developers: </h3>
+                            {extraInfo?.developers.map((dev, i) => <p key={i}>{dev.name}</p>)}
+                        </div>
+                        <div className="platform">
+                            <h3>Platforms: </h3>
+                            {extraInfo?.platforms.map((plat, i) => <p key={i}>{plat?.platform?.name}</p>).slice(0, 5)}
+                        </div>
+                    </div>
+                    <div className="tags-hours">
+                        <div className="tag">
+                            <h3>Tags: </h3>
+                            {extraInfo?.tags.map((tag, i) => <p key={i}>{tag.name}</p>)}
+                        </div>
+                        <h3>Hours played: {specGame?.played_time}</h3>
+                    </div>
                     <Link to={storeUrl()} className="buy"><button>Buy</button></Link>
-                </div>
-                <p>{extraInfo?.description_raw}</p>
-                <div className="publish-details">
-                    <p>Genre: </p>
-                    {specGame?.genre.map((genre, i) => <p key={i}>{genre.genre_name}</p>)}
-                    <p>Published: {extraInfo?.released}</p>
-                    <p>Publisher: {extraInfo?.publishers[0].name}</p>
-                </div>
-                <div className="develop-platforms">
-                    <p>Developers: </p>
-                    {extraInfo?.developers.map((dev, i) => <p key={i}>{dev.name}</p>)}
-                    <p>Platforms: </p>
-                    {extraInfo?.platforms.map((plat, i) => <p key={i}>{plat?.platform?.name}</p>)}
-                </div>
-                <div className="tags-hours">
-                    <p>Tags: </p>
-                    {extraInfo?.tags.map((tag, i) => <p key={i}>{tag.name}</p>)}
-                    <p>Hours played: {specGame?.played_time}</p>
                 </div>
             </article>
         </>
