@@ -69,7 +69,7 @@ export default function GamePage({ onFavourite }) {
                 <div className="text-content">
                     <div className="heading">
                         <h1>{specGame?.title}</h1>
-                        <p>{extraInfo?.rating}</p>
+                        <h3>{extraInfo?.rating}</h3>
                         <button className='heart' onClick={() => onFavourite(specGame)} >Favourite</button>
                     </div>
                     <p>{extraInfo?.description_raw}</p>

@@ -7,7 +7,7 @@ export default function Dashboard({ recentGames, games, favourites, count }) {
 
     //Sliced the fetched sanity array to 4 gameCards for myGames and 2 for favourites, so not all of them are desplayed on the front page
     games = games.slice(0, 4)
-    favourites = favourites.slice(0, 2)
+    let favourites4 = favourites.slice(0, 2)
     return (<>
         <div className="front-page-container">
             <div className="shopHeader">
@@ -35,7 +35,7 @@ export default function Dashboard({ recentGames, games, favourites, count }) {
                 </Link>
             </div>
             <div className="myFav-front">
-                {favourites?.map((game, i) => <GameCard key={i} game={game} />)}
+                {favourites4?.map((game, i) => <GameCard key={i} game={game} />)}
             </div>
         </div>
     </>)
