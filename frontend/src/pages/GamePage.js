@@ -100,7 +100,7 @@ export default function GamePage({ onFavourite }) {
                     <div className="tags-hours">
                         <div className="tag">
                             <h3>Tags: </h3>
-                            {extraInfo?.tags.map((tag, i) => <p key={i}>{tag.name}</p>)}
+                            {extraInfo?.tags.map((tag, i) => <p key={i}>{tag.name}</p>).slice(0, 5)}
                         </div>
                         <h3>Hours played: {specGame?.played_time}</h3>
                     </div>

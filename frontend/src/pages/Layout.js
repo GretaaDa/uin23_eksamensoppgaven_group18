@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Nav from "../components/Nav";
 
 export default function Layout() {
@@ -11,9 +11,10 @@ export default function Layout() {
             <main>
                 <Outlet />
             </main>
-            <footer>
-                RAWG: https://rawg.io/
-                RAWG API :https://rawg.io/apidocs
+            <footer >
+                <Link to="https://rawg.io/">
+                RAWG: https://rawg.io/</Link>
+                <Link to="https://rawg.io/apidocs">RAWG API :https://rawg.io/apidocs</Link>
             </footer>
             </div>
         </>

@@ -258,6 +258,7 @@ button {
 .game-page {
   display: flex;
   flex-direction: row;
+  max-width: 70%;
   gap: 2rem;
   padding: 3rem;
 
@@ -430,8 +431,10 @@ main{
 }
 
 footer {
-  position: relative;
+  position:fixed;
   bottom: 0;
   width: 100%;
-  background-color: #6cf;
+  background-color: #333;
+  color: white;
+  text-align: center;
 }

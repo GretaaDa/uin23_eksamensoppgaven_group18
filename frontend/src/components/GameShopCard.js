@@ -11,7 +11,7 @@ export default function GameShopCard({ recent }) {
   //Fetched API info for the game stores to get a new array (results) with the store information
   const getRecentGameId = async () => {
     const result = await fetch(
-      `https://api.rawg.io/api/games/${recent.id}/stores?&key=5e35f504c4154714add5b9909f65f051`
+      `https://api.rawg.io/api/games/${recent.id}/stores?&key=72460563b7d041d4b0db0b87df35dd11`
     );
     const data = await result.json();
     setRecentGameId(data.results);
