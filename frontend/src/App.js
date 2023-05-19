@@ -1,5 +1,4 @@
 import './App.scss';
-import Nav from './components/Nav';
 import MyGames from './pages/MyGames';
 import MyFavourites from './pages/MyFavourites';
 import Gameshop from './pages/GameShop';
@@ -8,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import { useEffect, useState } from 'react';
 import { fetchCount, fetchGames } from './sanity/gameServices';
 import GamePage from './pages/GamePage';
+import Layout from './pages/Layout';
 
 function App() {
   //Initialized the state values for the sanity game information
@@ -54,13 +54,14 @@ function App() {
 
   return (
     <>
-      <Nav />
       <Routes>
-        <Route index element={<Dashboard games={games} recentGames={recentGames} favourites={favourites} count={count} />} />
-        <Route path="GameShop" element={<Gameshop recentGames={recentGames} />} />
-        <Route path="MyGames" element={<MyGames games={games} count={count} />} />
-        <Route path="MyFavourites" element={<MyFavourites favourites={favourites} />} />
-        <Route path=":slug" element={<GamePage onFavourite={handleFavourites} />} />
+        <Route element={<Layout />}>
+          <Route index element={<Dashboard games={games} recentGames={recentGames} favourites={favourites} count={count} />} />
+          <Route path="GameShop" element={<Gameshop recentGames={recentGames} />} />
+          <Route path="MyGames" element={<MyGames games={games} count={count} />} />
+          <Route path="MyFavourites" element={<MyFavourites favourites={favourites} />} />
+          <Route path=":slug" element={<GamePage onFavourite={handleFavourites} />} />
+        </Route>
       </Routes>
     </>
   )

@@ -9,7 +9,6 @@ export default function Nav() {
                 <CustomLink to="/Gameshop">Shop</CustomLink>
                 <CustomLink to="/MyGames">My Games</CustomLink>
                 <CustomLink to="/MyFavourites">Favourites</CustomLink>
-
             </ul>
         </nav>
     )

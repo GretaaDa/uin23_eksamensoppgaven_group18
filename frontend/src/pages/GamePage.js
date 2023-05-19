@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { fetchSpecificGame } from "../sanity/gameServices"
+import { HeartIcon } from "@heroicons/react/24/outline"
 
 export default function GamePage({ onFavourite }) {
     //Used useParams hook to retreive the slug parameter the matching rout
@@ -64,12 +65,12 @@ export default function GamePage({ onFavourite }) {
 
     return (
         <>
-                <img className="pageimg" src={extraInfo?.background_image} />
+            <img className="pageimg" src={extraInfo?.background_image} />
             <article className="game-page">
                 <div className="heading">
                     <h1>{specGame?.title}</h1>
                     <p>{extraInfo?.rating}</p>
-                    <button onClick={() => onFavourite(specGame)} >Favourite</button>
+                    <button onClick={() => onFavourite(specGame)} ><HeartIcon className='heart' />Favourite</button>
                     <Link to={storeUrl()} className="buy"><button>Buy</button></Link>
                 </div>
                 <p>{extraInfo?.description_raw}</p>
