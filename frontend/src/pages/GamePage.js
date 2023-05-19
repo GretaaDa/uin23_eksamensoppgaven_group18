@@ -64,12 +64,13 @@ export default function GamePage({ onFavourite }) {
 
     return (
         <>
+                <img className="pageimg" src={extraInfo?.background_image} />
             <article className="game-page">
-                <img src={extraInfo?.background_image} />
                 <div className="heading">
                     <h1>{specGame?.title}</h1>
                     <p>{extraInfo?.rating}</p>
                     <button onClick={() => onFavourite(specGame)} >Favourite</button>
+                    <Link to={storeUrl()} className="buy"><button>Buy</button></Link>
                 </div>
                 <p>{extraInfo?.description_raw}</p>
                 <div className="publish-details">
@@ -89,7 +90,6 @@ export default function GamePage({ onFavourite }) {
                     {extraInfo?.tags.map((tag, i) => <p key={i}>{tag.name}</p>)}
                     <p>Hours played: {specGame?.played_time}</p>
                 </div>
-                <Link to={storeUrl()} className="buy"><button>Buy</button></Link>
             </article>
         </>
     )

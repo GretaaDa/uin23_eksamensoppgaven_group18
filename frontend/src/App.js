@@ -51,7 +51,6 @@ function App() {
   return (
     <>
       <Nav />
-      <div className="container">
         <Routes>
           <Route index element={<Dashboard games={games} recentGames={recentGames} favourites={favourites} />} />
           <Route path="GameShop" element={<Gameshop recentGames={recentGames} />} />
@@ -59,7 +58,6 @@ function App() {
           <Route path="MyFavourites" element={<MyFavourites favourites={favourites} />} />
           <Route path=":slug" element={<GamePage onFavourite={handleFavourites} />} />
         </Routes>
-      </div>
     </>
   )
 }

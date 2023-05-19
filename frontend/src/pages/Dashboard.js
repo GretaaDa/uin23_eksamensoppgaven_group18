@@ -9,6 +9,7 @@ export default function Dashboard({ recentGames, games, favourites }) {
     games = games.slice(0, 4)
     favourites = favourites.slice(0, 2)
     return (<>
+    <div className="container">
         <header>
             <h2>Dashboard</h2>
             <Link to="/GameShop">
@@ -20,11 +21,16 @@ export default function Dashboard({ recentGames, games, favourites }) {
         </div>
         <div className="library">
             <h2>My Games Library</h2>
+            <div className="myLibrary">
             {games?.map((game, i) => <GameCard key={i} game={game} />)}
+            </div>
         </div>
         <div className="myFav">
             <h2>My Favourites</h2>
+            <div className="favGames">
             {favourites?.map((game, i) => <GameCard key={i} game={game} />)}
+            </div>
+        </div>
         </div>
     </>)
 }

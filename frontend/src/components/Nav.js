@@ -3,7 +3,7 @@ export default function Nav() {
     //Help adding a local image as the logo: https://stackoverflow.com/questions/34582405/react-wont-load-local-images
     return (
         <nav className="nav">
-            <Link to="/"><img src={require('../files/game-store.png')} /></Link>
+            <Link to="/"><img className="logo" src={require('../files/game-store.png')} /></Link>
             <ul>
 
                 <CustomLink to="/Gameshop">Shop</CustomLink>
