@@ -1,0 +1,21 @@
+GretaaDa - Greta Dauskurtaite, pvdec - Diogo Do Vale Parcerias
+
+Many of the code was written, simply using examples that we did during the lectures, links to them:
+https://github.com/toremake/UIN2023_sanity_create/tree/main/frontend
+https://github.com/toremake/UIN23_sanity_sandbox/tree/main/frontend
+
+Other sources looked at:
+https://www.sanity.io/schemas/display-a-document-count-in-the-title-of-a-pane-in-structure-builder-a8e80394
+https://www.sanity.io/docs/slug-type
+https://stackoverflow.com/questions/53253940/make-react-useeffect-hook-not-run-on-initial-render
+https://stackoverflow.com/questions/34582405/react-wont-load-local-images
+https://stackoverflow.com/questions/8217419/how-to-determine-if-javascript-array-contains-an-object-with-an-attribute-that-e
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+
+The difficulties we faced, were mainly focused around the github submitions. We exerienced some merging issues, that resulted in the code
+being deleted. There were also some difficulties with the level of knowlage/will surounding the difficulty of the task. We tried to split the 
+work depending on how much each member knows, but there were troubles getting it done, so due to that there are some details choosen to do 
+differently. The count for favourites is updated using .length instead of the GROQ count method. The games in favourites do not contain 
+local storege and for that reason it disapears on every refresh. 
+
