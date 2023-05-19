@@ -8,13 +8,18 @@ body {
   height: 100vh;
 }
 
-.container {
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.front-page-container {
   margin-top: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 50px 0.2fr 50px 0.4fr 0.4fr;
+  grid-template-rows: 50px 0.2fr 50px 0.4fr 0.4fr 50px;
 }
 
 .title {
@@ -64,7 +69,19 @@ nav {
   }
 }
 
+.shopHeader{
+  grid-column: 1/4;
+}
 
+.libraryHeader{
+  grid-column: 1/4;
+  grid-row: 3/4;
+}
+
+.myFavHeader{
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
 
 h2 {
   color: rgb(0, 0, 0);
@@ -89,14 +106,14 @@ h2 {
 }
 
 .thumbnail {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   padding: 1rem;
   align-items: center;
   float: left;
 }
 
-.newest {
+.Shop-front {
   grid-column: 1/4;
   grid-row: 2/2;
   display: flex;
@@ -110,34 +127,25 @@ h2 {
   min-width: 70%;
 }
 
-.newestShop {
+.myFav-front {
+  grid-column: 3/3;
+  grid-row: 4/6;
+  margin-left: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
-  background-color: #eeeeee;
   border-radius: 20px;
   padding-top: 1rem;
   margin-bottom: 2rem;
   min-width: 70%;
 }
 
-.library {
-  grid-column: 1/1;
-  grid-row: 3/4;
-}
-
-.myFav {
-  grid-column: 3/3;
-  grid-row: 3/4;
-  margin-left: 1rem;
-}
-
 
 .gameshopCard {
   min-width: 500px;
   max-width: 500px;
-  max-height: 90%;
+  min-height: 90%;
   border-radius: 20px;
   border: 5px solid #333;
   background-color: white;
@@ -173,14 +181,13 @@ button {
   background-color: #555;
 }
 
-.fav {
-  grid-column: 3/3;
-  grid-row: 4/5;
+.library-front {
+  grid-column: 1/3;
+  grid-row: 4/6;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
-  background-color: #eeeeee;
   border-radius: 20px;
   padding-top: 1rem;
   margin-bottom: 2rem;
@@ -211,7 +218,6 @@ button {
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
-  background-color: #eeeeee;
   border-radius: 20px;
   padding-top: 1rem;
   margin-bottom: 2rem;
@@ -221,11 +227,11 @@ button {
 .sanityCard {
   min-width: 450px;
   max-width: 500px;
-  height: 95%;
+  height: 70%;
   border-radius: 20px;
   border: 5px solid #333;
   background-color: white;
-  margin: 1rem;
+  margin: 2rem;
   position: relative;
 
   img {
@@ -273,4 +279,27 @@ button {
   p {
     font-size: 15px;
   }
+}
+
+.newestShop{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.layoutGrid{
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: 0fr 0fr 80px;
+}
+
+main{
+  height: 100%;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #6cf;
 }

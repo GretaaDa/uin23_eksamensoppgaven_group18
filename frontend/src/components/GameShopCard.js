@@ -27,12 +27,14 @@ export default function GameShopCard({ recent }) {
 
   return (
     <>
+    <div className='newest'>
       <div className="gameshopCard">
         <img className="thumbnail" src={recent.background_image} alt={recent.name} />
         <h3 className="gameName">{recent.name}</h3>
         {genresToShow.map((genre, i) => (<p key={i}>{genre.name}</p>))}
         {firstUrl && (<button className="buyBtn" onClick={() => window.open(firstUrl)}>Buy</button>)}
       </div>
+    </div>
     </>
   );
 }

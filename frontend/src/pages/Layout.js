@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 export default function Layout() {
     return (
         <>
+        <div className="layoutGrid">
             <header>
                 <Nav />
             </header>
@@ -14,6 +15,7 @@ export default function Layout() {
                 RAWG: https://rawg.io/
                 RAWG API :https://rawg.io/apidocs
             </footer>
+            </div>
         </>
     )
 }
